@@ -8,12 +8,24 @@
 
 import UIKit
 
-class ListViewController: UITableViewController {
+class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     
-    var activities : [Activity] = []
-
-    @IBAction func addActivity(_ sender: Any) {
+    var activities = ["Jog", "Swim", "Fight Benny"]
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return activities.count
     }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
+        cell.textLabel?.text = activities[indexPath.row]
+        return cell
+    }
+    
+    
+    @IBOutlet weak var myTableView: UITableView!
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,16 +42,15 @@ class ListViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
+    /*
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 1
     }
+     */
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

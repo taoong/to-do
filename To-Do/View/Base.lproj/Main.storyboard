@@ -25,7 +25,7 @@
                                     <constraint firstAttribute="height" constant="577" id="opZ-Vu-33D"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="bqV-nI-hV6">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="bqV-nI-hV6" customClass="TableViewCell" customModule="To_Do" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bqV-nI-hV6" id="P0U-y0-sCP">
@@ -49,16 +49,21 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="dueDate" destination="DXp-qj-MEt" id="a1X-n3-K9A"/>
+                                            <outlet property="title" destination="nHa-uM-mDt" id="GLF-PG-uAo"/>
                                             <segue destination="k8j-CT-CRg" kind="show" id="zC3-a0-SFo"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="bSd-VR-eKb" id="04l-pG-QrG"/>
+                                    <outlet property="delegate" destination="bSd-VR-eKb" id="6ca-zQ-HSJ"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezU-Sg-f9S">
                                 <rect key="frame" x="78" y="601" width="226" height="30"/>
                                 <state key="normal" title="Add To-Do Item"/>
                                 <connections>
-                                    <action selector="addActivity:" destination="bSd-VR-eKb" eventType="touchUpInside" id="R5W-QD-2cd"/>
                                     <segue destination="mHm-eg-69B" kind="show" id="h7h-kc-qRg"/>
                                 </connections>
                             </button>
@@ -73,6 +78,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7hb-NE-DHD"/>
                     </view>
+                    <connections>
+                        <outlet property="myTableView" destination="DqJ-eo-bAX" id="SUb-X9-oan"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ieQ-QJ-FG5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

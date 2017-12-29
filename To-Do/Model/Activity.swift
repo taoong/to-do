@@ -9,7 +9,7 @@
 import Foundation
 
 class Activity {
-    var title : String
-    var dueDate : Date
-    var description : String
+    var title : String = ""
+    var dueDate : Date = Date()
+    var description : String = ""
 }

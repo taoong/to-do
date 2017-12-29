@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F0058E0B1FF5F54B0083F9B3 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0058E0A1FF5F54B0083F9B3 /* TableViewCell.swift */; };
 		F04CD54F1FE776700006DE8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04CD54E1FE776700006DE8E /* AppDelegate.swift */; };
 		F04CD5511FE776700006DE8E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04CD5501FE776700006DE8E /* ViewController.swift */; };
 		F04CD5541FE776700006DE8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F04CD5521FE776700006DE8E /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F0058E0A1FF5F54B0083F9B3 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TableViewCell.swift; path = "To-Do/Model/TableViewCell.swift"; sourceTree = SOURCE_ROOT; };
 		F04CD54B1FE776700006DE8E /* To-Do.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "To-Do.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F04CD54E1FE776700006DE8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F04CD5501FE776700006DE8E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				F0C29B791FE78698002AF1E3 /* Activity.swift */,
+				F0058E0A1FF5F54B0083F9B3 /* TableViewCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0058E0B1FF5F54B0083F9B3 /* TableViewCell.swift in Sources */,
 				F04CD5511FE776700006DE8E /* ViewController.swift in Sources */,
 				F04CD54F1FE776700006DE8E /* AppDelegate.swift in Sources */,
 				F0C29B7A1FE78698002AF1E3 /* Activity.swift in Sources */,
