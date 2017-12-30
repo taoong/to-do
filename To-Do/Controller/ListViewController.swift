@@ -8,32 +8,60 @@
 
 import UIKit
 
+var activities : [Activity] = [Activity(title: "a", dueDate: "b", description: "c")]
+
 class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     
-    var activities = ["Jog", "Swim", "Fight Benny"]
+    @IBAction func unwindToList(segue:UIStoryboardSegue) { }
+    
+    @IBOutlet weak var myTableView: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return activities.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
-        cell.textLabel?.text = activities[indexPath.row]
+        let cell = myTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell;
+        cell.title?.text = activities[indexPath.row].title
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
+        if let date = dateFormatter.date(from: activities[indexPath.row].dueDate) {
+            let timeLeft = Int((date.timeIntervalSinceNow))
+            print(timeLeft)
+            if timeLeft > 800000 {
+                cell.backgroundColor = UIColor.green
+            } else if timeLeft > 200000 {
+                cell.backgroundColor = UIColor.yellow
+            } else if timeLeft > 86400 {
+                cell.backgroundColor = UIColor.orange
+            } else if timeLeft > 0 {
+                cell.backgroundColor = UIColor.red
+            } else {
+                cell.backgroundColor = UIColor.gray
+            }
+        }
+        
+        
+        cell.dueDate?.text = activities[indexPath.row].dueDate
         return cell
     }
-    
-    
-    @IBOutlet weak var myTableView: UITableView!
-    
 
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            activities.remove(at: indexPath.row)
+            myTableView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        myTableView.delegate = self
+        myTableView.dataSource = self
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,6 +69,10 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Dispose of any resources that can be recreated.
     }
 
+    
+    override func viewDidAppear(_ animated: Bool) {
+        myTableView.reloadData()
+    }
     // MARK: - Table view data source
     /*
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -90,17 +122,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     */
 
     /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.

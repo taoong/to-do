@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		F0058E0B1FF5F54B0083F9B3 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0058E0A1FF5F54B0083F9B3 /* TableViewCell.swift */; };
+		F0273DCB1FF60447004F5464 /* AddActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0273DCA1FF60447004F5464 /* AddActivityViewController.swift */; };
+		F0273DCD1FF6049C004F5464 /* ShowActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0273DCC1FF6049C004F5464 /* ShowActivityViewController.swift */; };
 		F04CD54F1FE776700006DE8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04CD54E1FE776700006DE8E /* AppDelegate.swift */; };
-		F04CD5511FE776700006DE8E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F04CD5501FE776700006DE8E /* ViewController.swift */; };
 		F04CD5541FE776700006DE8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F04CD5521FE776700006DE8E /* Main.storyboard */; };
 		F04CD5561FE776700006DE8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F04CD5551FE776700006DE8E /* Assets.xcassets */; };
 		F04CD5591FE776700006DE8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F04CD5571FE776700006DE8E /* LaunchScreen.storyboard */; };
@@ -19,9 +20,10 @@
 
 /* Begin PBXFileReference section */
 		F0058E0A1FF5F54B0083F9B3 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TableViewCell.swift; path = "To-Do/Model/TableViewCell.swift"; sourceTree = SOURCE_ROOT; };
+		F0273DCA1FF60447004F5464 /* AddActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivityViewController.swift; sourceTree = "<group>"; };
+		F0273DCC1FF6049C004F5464 /* ShowActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowActivityViewController.swift; sourceTree = "<group>"; };
 		F04CD54B1FE776700006DE8E /* To-Do.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "To-Do.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F04CD54E1FE776700006DE8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F04CD5501FE776700006DE8E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F04CD5531FE776700006DE8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F04CD5551FE776700006DE8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F04CD5581FE776700006DE8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -91,7 +93,8 @@
 		F04CD5621FE776CE0006DE8E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				F04CD5501FE776700006DE8E /* ViewController.swift */,
+				F0273DCA1FF60447004F5464 /* AddActivityViewController.swift */,
+				F0273DCC1FF6049C004F5464 /* ShowActivityViewController.swift */,
 				F0C29B771FE78530002AF1E3 /* ListViewController.swift */,
 			);
 			path = Controller;
@@ -170,8 +173,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0058E0B1FF5F54B0083F9B3 /* TableViewCell.swift in Sources */,
-				F04CD5511FE776700006DE8E /* ViewController.swift in Sources */,
 				F04CD54F1FE776700006DE8E /* AppDelegate.swift in Sources */,
+				F0273DCD1FF6049C004F5464 /* ShowActivityViewController.swift in Sources */,
+				F0273DCB1FF60447004F5464 /* AddActivityViewController.swift in Sources */,
 				F0C29B7A1FE78698002AF1E3 /* Activity.swift in Sources */,
 				F0C29B781FE78530002AF1E3 /* ListViewController.swift in Sources */,
 			);

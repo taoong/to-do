@@ -9,7 +9,13 @@
 import Foundation
 
 class Activity {
-    var title : String = ""
-    var dueDate : Date = Date()
-    var description : String = ""
+    var title : String
+    var dueDate : String
+    var description : String
+    
+    init(title: String, dueDate: String, description: String) {
+        self.title = title
+        self.dueDate = dueDate
+        self.description = description
+    }
 }
